@@ -66,21 +66,23 @@
 
     <section id="method">
       <h2>Method</h2>
-      <p>
-        The proposed pipeline jointly trains a task-oriented policy and a neural Lyapunov certificate
-        (Twin Control Lyapunov Function, TCLF) inside an Actor&ndash;Critic RL loop.
-        A <strong>state-aware gating mechanism</strong> balances task rewards and Lyapunov robustness penalties,
-        enlarging the certified region of attraction while preserving locomotion tracking performance.
-      </p>
-      <ul>
-        <li>Probabilistic stability conditions under sub-Gaussian uncertainty modeling</li>
-        <li>Joint optimization of policy, value critic, and Lyapunov / Lyapunov-Q networks</li>
-        <li>Quantitative robustness estimation for unseen disturbance intensities without retraining</li>
-        <li>Validated from low-dimensional pendulum to high-dimensional bipedal locomotion (sim + hardware)</li>
-      </ul>
+      <div class="notice">
+        <p>
+          The proposed pipeline jointly trains a task-oriented policy and a neural Lyapunov certificate
+          (Twin Control Lyapunov Function, TCLF) inside an Actor&ndash;Critic RL loop.
+          A <strong>state-aware gating mechanism</strong> balances task rewards and Lyapunov robustness penalties,
+          enlarging the certified region of attraction while preserving locomotion tracking performance.
+        </p>
+        <ul>
+          <li>Probabilistic stability conditions under sub-Gaussian uncertainty modeling</li>
+          <li>Joint optimization of policy, value critic, and Lyapunov / Lyapunov-Q networks</li>
+          <li>Quantitative robustness estimation for unseen disturbance intensities without retraining</li>
+          <li>Validated from low-dimensional pendulum to high-dimensional bipedal locomotion (sim + hardware)</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="codebase">
+    <!-- <section id="codebase">
       <h2>Codebase</h2>
       <div class="notice">
         <strong>Fork notice.</strong>
@@ -98,7 +100,7 @@
         Baselines include plain PPO (<code>Unitree-G1-Flat</code>) and AMP (<code>Unitree-G1-AMP-Flat</code>).
         See the <a href="https://github.com/detachedcat/robust-NLFRL/blob/main/README.md">README</a> for install and training commands.
       </p>
-    </section>
+    </section> -->
 
     <section id="bibtex">
       <h2>BibTeX</h2>
