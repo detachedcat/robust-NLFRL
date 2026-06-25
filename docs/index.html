@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>robust-NLFRL — Certifiably Robust RL via Probabilistic Neural Lyapunov Functions</title>
+  <meta name="description" content="Official project page for probabilistic neural Lyapunov function reinforcement learning for certifiably robust legged locomotion.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Certifiably Robust Reinforcement Learning via<br>Probabilistic Neural Lyapunov Functions</h1>
+      <p class="authors">Authors &mdash; update with final author list before publication</p>
+      <p class="affiliation">IEEE Transactions on Industrial Informatics (under review)</p>
+
+      <div class="links">
+        <a class="btn btn-primary" href="https://github.com/detachedcat/robust-NLFRL">Code</a>
+        <a class="btn" href="https://github.com/detachedcat/robust-NLFRL/blob/main/README.md">README</a>
+        <a class="btn" id="youtube-link" href="#" style="display:none">Video</a>
+      </div>
+
+      <img class="teaser" src="assets/framework.png" alt="Framework overview: probabilistic neural Lyapunov functions integrated into an Actor-Critic RL pipeline with state-aware gating for robust legged locomotion.">
+    </header>
+
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Certifiable robustness is a critical prerequisite for robotic autonomy in complex real-world environments,
+        where systems inevitably suffer from diverse inherent uncertainties including unmodeled dynamics and sensor noise.
+        To address the lack of formal stability guarantees in existing learning-based locomotion controllers,
+        we propose a unified framework integrating <strong>neural Lyapunov functions</strong> with
+        <strong>reinforcement learning</strong>.
+      </p>
+      <p>
+        Different from prior deterministic Lyapunov methods and Gaussian-only stochastic stability analysis,
+        we model both dynamic mismatch and state estimation noise as <strong>sub-Gaussian random disturbances</strong>
+        and derive rigorous <strong>probabilistic Lyapunov conditions</strong> with an explicit provable lower bound
+        on system convergence probability. These stability constraints are embedded as regularizers into an end-to-end
+        Actor&ndash;Critic pipeline to jointly optimize task tracking performance and certifiable robustness
+        without requiring accurate analytical system models.
+      </p>
+      <p>
+        Our framework yields an expanded <strong>certified region of attraction</strong> and quantitative robustness
+        metrics. Extensive validations are carried out across systems of rising complexity: inverted pendulum simulation,
+        quadruped robot simulation, and full-sized Unitree bipedal humanoid with both simulation and physical hardware
+        tests. Comparative results against classical control, deterministic neural Lyapunov, and state-of-the-art
+        imitation RL baselines demonstrate superior disturbance resilience and stable gait recovery under locomotion tasks.
+      </p>
+    </section>
+
+    <section id="video">
+      <h2>Demo Video</h2>
+      <div class="video-wrapper" id="video-embed" style="display:none">
+        <iframe
+          id="youtube-iframe"
+          title="Demo video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-placeholder" id="video-placeholder">
+        Demo video will be hosted on YouTube. Set <code>youtubeVideoId</code> at the bottom of this page to embed it.
+      </div>
+    </section>
+
+    <section id="method">
+      <h2>Method</h2>
+      <p>
+        The proposed pipeline jointly trains a task-oriented policy and a neural Lyapunov certificate
+        (Twin Control Lyapunov Function, TCLF) inside an Actor&ndash;Critic RL loop.
+        A <strong>state-aware gating mechanism</strong> balances task rewards and Lyapunov robustness penalties,
+        enlarging the certified region of attraction while preserving locomotion tracking performance.
+      </p>
+      <ul>
+        <li>Probabilistic stability conditions under sub-Gaussian uncertainty modeling</li>
+        <li>Joint optimization of policy, value critic, and Lyapunov / Lyapunov-Q networks</li>
+        <li>Quantitative robustness estimation for unseen disturbance intensities without retraining</li>
+        <li>Validated from low-dimensional pendulum to high-dimensional bipedal locomotion (sim + hardware)</li>
+      </ul>
+    </section>
+
+    <section id="codebase">
+      <h2>Codebase</h2>
+      <div class="notice">
+        <strong>Fork notice.</strong>
+        This repository extends the open-source
+        <a href="https://github.com/ccrpRepo/AMP_mjlab">ccrpRepo/AMP_mjlab</a> project
+        (mjlab + rsl_rl AMP locomotion stack for Unitree G1).
+        We retain the upstream training and deployment pipeline, and add the probabilistic neural Lyapunov
+        co-training module (<code>LyaPPO</code>, <code>Unitree-G1-LYA-Flat</code>).
+        The upstream repository also explores unified locomotion capabilities; <strong>this release focuses on
+        certifiably robust velocity-tracking locomotion</strong> and does not target fall-and-get-up recovery as
+        the main contribution.
+      </div>
+      <p style="margin-top:1rem;">
+        Humanoid experiments use task <code>Unitree-G1-LYA-Flat</code>.
+        Baselines include plain PPO (<code>Unitree-G1-Flat</code>) and AMP (<code>Unitree-G1-AMP-Flat</code>).
+        See the <a href="https://github.com/detachedcat/robust-NLFRL/blob/main/README.md">README</a> for install and training commands.
+      </p>
+    </section>
+
+    <section id="bibtex">
+      <h2>BibTeX</h2>
+      <pre>@article{robust_nlfrl2026,
+  title   = {Certifiably Robust Reinforcement Learning via Probabilistic Neural Lyapunov Functions},
+  journal = {IEEE Transactions on Industrial Informatics},
+  year    = {2026},
+  note    = {under review}
+}</pre>
+    </section>
+
+    <footer>
+      <p>
+        <strong>robust-NLFRL</strong>
+        &middot; Based on <a href="https://github.com/ccrpRepo/AMP_mjlab">ccrpRepo/AMP_mjlab</a>
+        &middot; Built on <a href="https://github.com/mujocolab/mjlab">mjlab</a>
+        and <a href="https://github.com/unitreerobotics/unitree_rl_mjlab">unitree_rl_mjlab</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    const youtubeVideoId = "";
+
+    if (youtubeVideoId) {
+      const embed = document.getElementById("video-embed");
+      const iframe = document.getElementById("youtube-iframe");
+      const placeholder = document.getElementById("video-placeholder");
+      const link = document.getElementById("youtube-link");
+
+      iframe.src = "https://www.youtube.com/embed/" + youtubeVideoId;
+      embed.style.display = "block";
+      placeholder.style.display = "none";
+
+      link.href = "https://www.youtube.com/watch?v=" + youtubeVideoId;
+      link.style.display = "inline-block";
+    }
+  </script>
+</body>
+</html>
