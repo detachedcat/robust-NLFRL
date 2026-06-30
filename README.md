@@ -8,7 +8,7 @@ Simulation code for **certifiably robust legged locomotion** on Unitree G1: prob
 
 ## Fork & Scope
 
-This project extends the open-source repository **[ccrpRepo/AMP_mjlab](https://github.com/ccrpRepo/AMP_mjlab)** (mjlab + rsl_rl AMP stack for Unitree G1). We thank the upstream authors for releasing their codebase.
+This project extends the open-source repository **[AMP_mjlab](https://github.com/ccrpRepo/AMP_mjlab)** (mjlab + rsl_rl AMP stack for Unitree G1). We thank the upstream authors for releasing their codebase.
 
 | | Upstream (`ccrpRepo/AMP_mjlab`) | This repo (`robust-NLFRL`) |
 |---|---|---|

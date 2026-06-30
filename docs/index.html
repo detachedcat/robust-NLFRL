@@ -226,8 +226,8 @@
     /* Lyapunov 3D 景观图片 - 完整显示不裁剪 */
     .media-card--lyapunov img {
       object-fit: contain;
-      padding: 12px;
-      background: linear-gradient(135deg, #f0f7ff 0%, #e0efff 100%);
+      padding: 8px;
+      background-color: #ffffff;
     }
 
     video {
@@ -360,7 +360,7 @@
       }
 
       .media-card--lyapunov img {
-        padding: 8px;
+        padding: 6px;
         aspect-ratio: 1 / 1;
       }
     }
@@ -428,10 +428,10 @@
 
     <section id="results-pendulum">
       <h2>Inverted Pendulum</h2>
-      <p class="section-desc">Quick preview of stabilization rollouts under different controllers (simulation).</p>
+      <p class="section-desc">Quick preview of stabilization rollouts under different controllers.</p>
 
       <div class="method-group">
-        <span class="method-label">LQR Baseline</span>
+        <span class="method-label">LQR</span>
         <div class="pendulum-grid">
           <div class="media-card media-card--lyapunov">
             <p class="media-title">3D Lyapunov Landscape</p>
@@ -585,29 +585,33 @@
 
     <section id="results-humanoid-gifs">
       <h2>Humanoid Preview</h2>
-      <p class="section-desc">Short GIF previews on Unitree G1 (simulation and hardware). Replace placeholders by uploading files to the paths shown below.</p>
+      <p class="section-desc">Short video previews on Unitree G1 (simulation and hardware).</p>
 
       <h3>Simulation</h3>
       <div class="media-grid media-grid--wide">
         <div class="media-card">
           <p class="media-title">Nominal Walk</p>
-          <img src="assets/Humanoid/sim/nominal_walk.gif" alt="Nominal walk — simulation"
-               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/sim/nominal_walk.gif'))">
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Humanoid/sim/nominal_walk.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="media-card">
           <p class="media-title">Push Example 1</p>
-          <img src="assets/Humanoid/sim/push_example1.gif" alt="Push example 1 — simulation"
-               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/sim/push_example1.gif'))">
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Humanoid/sim/push_example1.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="media-card">
           <p class="media-title">Push Example 2</p>
-          <img src="assets/Humanoid/sim/push_example2.gif" alt="Push example 2 — simulation"
-               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/sim/push_example2.gif'))">
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Humanoid/sim/push_example2.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="media-card">
           <p class="media-title">Gait Recovery</p>
-          <img src="assets/Humanoid/sim/gait_recovery.gif" alt="Gait recovery — simulation"
-               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/sim/gait_recovery.gif'))">
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Humanoid/sim/gait_recovery.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
@@ -615,23 +619,27 @@
       <div class="media-grid media-grid--wide">
         <div class="media-card">
           <p class="media-title">Nominal Walk</p>
-          <img src="assets/Humanoid/hardware/nominal_walk.gif" alt="Nominal walk — hardware"
-               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/hardware/nominal_walk.gif'))">
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Humanoid/hardware/nominal_walk.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="media-card">
           <p class="media-title">Push Example 1</p>
-          <img src="assets/Humanoid/hardware/push_example1.gif" alt="Push example 1 — hardware"
-               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/hardware/push_example1.gif'))">
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Humanoid/hardware/push_example1.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="media-card">
           <p class="media-title">Push Example 2</p>
-          <img src="assets/Humanoid/hardware/push_example2.gif" alt="Push example 2 — hardware"
-               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/hardware/push_example2.gif'))">
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Humanoid/hardware/push_example2.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="media-card">
           <p class="media-title">Gait Recovery</p>
-          <img src="assets/Humanoid/hardware/gait_recovery.gif" alt="Gait recovery — hardware"
-               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/hardware/gait_recovery.gif'))">
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Humanoid/hardware/gait_recovery.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>
