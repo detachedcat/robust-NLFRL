@@ -20,7 +20,7 @@
         <a class="btn" id="youtube-link" href="#" style="display:none">Video</a>
       </div>
 
-      <img class="teaser" src="assets/framework.png" alt="Framework overview: probabilistic neural Lyapunov functions integrated into an Actor-Critic RL pipeline with state-aware gating for robust legged locomotion.">
+      <img class="teaser" src="assets/framework.png" alt="Framework overview: probabilistic neural Lyapunov functions integrated into an Actor-Critic RL pipeline with state-aware gating.">
     </header>
 
     <section id="abstract">
@@ -73,8 +73,11 @@
 
       <div class="method-group">
         <span class="method-label">LQR Baseline</span>
-        <img class="lyapunov-plot" src="assets/InvertedPendulum/videos-LQR/Lya-LQR.png" alt="Lyapunov landscape — LQR baseline">
-        <div class="media-grid">
+        <div class="pendulum-grid">
+          <div class="media-card">
+            <p class="media-title">3D Lyapunov Landscape</p>
+            <img src="assets/InvertedPendulum/videos-LQR/Lya-LQR.png" alt="Lyapunov landscape — LQR baseline">
+          </div>
           <div class="media-card">
             <p class="media-title">Example 1</p>
             <video controls loop muted playsinline preload="metadata">
@@ -110,8 +113,11 @@
 
       <div class="method-group">
         <span class="method-label">Neural Lyapunov Control (NLC)</span>
-        <img class="lyapunov-plot" src="assets/InvertedPendulum/videos-NLC/Lya-NLC.png" alt="Lyapunov landscape — NLC baseline">
-        <div class="media-grid">
+        <div class="pendulum-grid">
+          <div class="media-card">
+            <p class="media-title">3D Lyapunov Landscape</p>
+            <img src="assets/InvertedPendulum/videos-NLC/Lya-NLC.png" alt="Lyapunov landscape — NLC baseline">
+          </div>
           <div class="media-card">
             <p class="media-title">Example 1</p>
             <video controls loop muted playsinline preload="metadata">
@@ -147,8 +153,11 @@
 
       <div class="method-group">
         <span class="method-label">Ours (Probabilistic NLF-RL)</span>
-        <img class="lyapunov-plot" src="assets/InvertedPendulum/videos-Ours/Lya-Ours.png" alt="Lyapunov landscape — ours">
-        <div class="media-grid">
+        <div class="pendulum-grid">
+          <div class="media-card">
+            <p class="media-title">3D Lyapunov Landscape</p>
+            <img src="assets/InvertedPendulum/videos-Ours/Lya-Ours.png" alt="Lyapunov landscape — ours">
+          </div>
           <div class="media-card">
             <p class="media-title">Example 1</p>
             <video controls loop muted playsinline preload="metadata">
@@ -187,11 +196,29 @@
       <h2>Quadruped (Doggo)</h2>
       <p class="section-desc">Simulation snapshots of robust locomotion on the Doggo platform.</p>
 
-      <div class="media-grid media-grid--wide">
+      <div class="media-grid media-grid--2x2">
         <div class="media-card">
-          <p class="media-title">Trajectory Follow Snapshot</p>
+          <p class="media-title">Snapshot 1</p>
           <video controls loop muted playsinline preload="metadata">
-            <source src="assets/Doggo/doggo-follow.mp4" type="video/mp4">
+            <source src="assets/Doggo/clip_1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="media-card">
+          <p class="media-title">Snapshot 2</p>
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Doggo/clip_2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="media-card">
+          <p class="media-title">Snapshot 3</p>
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Doggo/clip_3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="media-card">
+          <p class="media-title">Snapshot 4</p>
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Doggo/clip_4.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -199,7 +226,7 @@
 
     <section id="results-humanoid-gifs">
       <h2>Humanoid Preview</h2>
-      <p class="section-desc">Short GIF previews on Unitree G1 (4 simulation + 4 hardware). Replace placeholders by uploading files to the paths shown below.</p>
+      <p class="section-desc">Short GIF previews on Unitree G1 (simulation and hardware). Replace placeholders by uploading files to the paths shown below.</p>
 
       <h3>Simulation</h3>
       <div class="media-grid media-grid--wide">
@@ -279,7 +306,6 @@
     <footer>
       <p>
         <strong>robust-NLFRL</strong>
-        &middot; Based on <a href="https://github.com/ccrpRepo/AMP_mjlab">ccrpRepo/AMP_mjlab</a>
         &middot; Built on <a href="https://github.com/mujocolab/mjlab">mjlab</a>
         and <a href="https://github.com/unitreerobotics/unitree_rl_mjlab">unitree_rl_mjlab</a>
       </p>

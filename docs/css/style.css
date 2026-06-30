@@ -152,13 +152,17 @@ ul {
   margin-bottom: 0.75rem;
 }
 
-.lyapunov-plot {
-  width: 100%;
-  max-width: 420px;
+.pendulum-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.pendulum-grid img {
   display: block;
-  margin: 0 auto 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--border);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   background: var(--card);
 }
 
@@ -166,6 +170,10 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 1rem;
+}
+
+.media-grid--2x2 {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .media-grid--wide {
@@ -290,7 +298,12 @@ footer {
 }
 
 @media (max-width: 560px) {
-  .media-grid {
+  .media-grid,
+  .pendulum-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .media-grid--2x2 {
+    grid-template-columns: 1fr;
   }
 }
