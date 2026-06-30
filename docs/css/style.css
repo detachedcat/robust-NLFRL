@@ -156,14 +156,26 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  align-items: stretch;
 }
 
-.pendulum-grid img {
-  display: block;
+.pendulum-grid .media-card--lyapunov {
+  overflow: visible;
+}
+
+.pendulum-grid .media-card--lyapunov img {
   width: 100%;
+  height: auto;
+  aspect-ratio: unset;
+  object-fit: contain;
+  object-position: center;
+  padding: 0.5rem;
+  background: #fff;
+}
+
+.pendulum-grid .media-card video {
   aspect-ratio: 1 / 1;
   object-fit: contain;
-  background: var(--card);
 }
 
 .media-grid {
