@@ -29,7 +29,7 @@ a:hover {
 }
 
 .container {
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
 }
@@ -105,6 +105,23 @@ h2 {
   border-bottom: 2px solid var(--border);
 }
 
+h3 {
+  font-size: 1.05rem;
+  margin: 1.5rem 0 0.65rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+h3:first-of-type {
+  margin-top: 0.75rem;
+}
+
+.section-desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+}
+
 p,
 li {
   font-size: 1rem;
@@ -112,6 +129,108 @@ li {
 
 ul {
   padding-left: 1.25rem;
+}
+
+.method-group {
+  margin-top: 1.75rem;
+  padding-top: 0.25rem;
+}
+
+.method-group:first-child {
+  margin-top: 0.5rem;
+}
+
+.method-label {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: #eef4fc;
+  border: 1px solid #cfe0fb;
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.lyapunov-plot {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+}
+
+.media-grid--wide {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.media-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.media-title {
+  margin: 0;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: #f8f9fb;
+}
+
+.media-card video,
+.media-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  background: #111;
+}
+
+.media-card video {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.media-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.media-placeholder {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f5f5f5,
+    #f5f5f5 8px,
+    #ececec 8px,
+    #ececec 16px
+  );
+}
+
+.media-placeholder code {
+  font-size: 0.75rem;
+  word-break: break-all;
 }
 
 .video-wrapper {
@@ -168,4 +287,10 @@ footer {
   color: var(--muted);
   font-size: 0.9rem;
   text-align: center;
+}
+
+@media (max-width: 560px) {
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

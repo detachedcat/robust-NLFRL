@@ -49,21 +49,6 @@
       </p>
     </section>
 
-    <section id="video">
-      <h2>Demo Video</h2>
-      <div class="video-wrapper" id="video-embed" style="display:none">
-        <iframe
-          id="youtube-iframe"
-          title="Demo video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-placeholder" id="video-placeholder">
-        Demo video will be hosted on YouTube. Set <code>youtubeVideoId</code> at the bottom of this page to embed it.
-      </div>
-    </section>
-
     <section id="method">
       <h2>Method</h2>
       <div class="notice">
@@ -82,25 +67,218 @@
       </div>
     </section>
 
-    <!-- <section id="codebase">
-      <h2>Codebase</h2>
-      <div class="notice">
-        <strong>Fork notice.</strong>
-        This repository extends the open-source
-        <a href="https://github.com/ccrpRepo/AMP_mjlab">ccrpRepo/AMP_mjlab</a> project
-        (mjlab + rsl_rl AMP locomotion stack for Unitree G1).
-        We retain the upstream training and deployment pipeline, and add the probabilistic neural Lyapunov
-        co-training module (<code>LyaPPO</code>, <code>Unitree-G1-LYA-Flat</code>).
-        The upstream repository also explores unified locomotion capabilities; <strong>this release focuses on
-        certifiably robust velocity-tracking locomotion</strong> and does not target fall-and-get-up recovery as
-        the main contribution.
+    <section id="results-pendulum">
+      <h2>Inverted Pendulum</h2>
+      <p class="section-desc">Quick preview of stabilization rollouts under different controllers (simulation).</p>
+
+      <div class="method-group">
+        <span class="method-label">LQR Baseline</span>
+        <img class="lyapunov-plot" src="assets/InvertedPendulum/videos-LQR/Lya-LQR.png" alt="Lyapunov landscape — LQR baseline">
+        <div class="media-grid">
+          <div class="media-card">
+            <p class="media-title">Example 1</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-LQR/rl-video-episode-0.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 2</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-LQR/rl-video-episode-1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 3</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-LQR/rl-video-episode-8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 4</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-LQR/rl-video-episode-27.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 5</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-LQR/rl-video-episode-64.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
-      <p style="margin-top:1rem;">
-        Humanoid experiments use task <code>Unitree-G1-LYA-Flat</code>.
-        Baselines include plain PPO (<code>Unitree-G1-Flat</code>) and AMP (<code>Unitree-G1-AMP-Flat</code>).
-        See the <a href="https://github.com/detachedcat/robust-NLFRL/blob/main/README.md">README</a> for install and training commands.
-      </p>
-    </section> -->
+
+      <div class="method-group">
+        <span class="method-label">Neural Lyapunov Control (NLC)</span>
+        <img class="lyapunov-plot" src="assets/InvertedPendulum/videos-NLC/Lya-NLC.png" alt="Lyapunov landscape — NLC baseline">
+        <div class="media-grid">
+          <div class="media-card">
+            <p class="media-title">Example 1</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-NLC/rl-video-episode-0.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 2</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-NLC/rl-video-episode-1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 3</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-NLC/rl-video-episode-8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 4</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-NLC/rl-video-episode-27.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 5</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-NLC/rl-video-episode-64.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="method-group">
+        <span class="method-label">Ours (Probabilistic NLF-RL)</span>
+        <img class="lyapunov-plot" src="assets/InvertedPendulum/videos-Ours/Lya-Ours.png" alt="Lyapunov landscape — ours">
+        <div class="media-grid">
+          <div class="media-card">
+            <p class="media-title">Example 1</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-Ours/rl-video-episode-0.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 2</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-Ours/rl-video-episode-1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 3</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-Ours/rl-video-episode-8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 4</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-Ours/rl-video-episode-27.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="media-card">
+            <p class="media-title">Example 5</p>
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/InvertedPendulum/videos-Ours/rl-video-episode-64.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results-doggo">
+      <h2>Quadruped (Doggo)</h2>
+      <p class="section-desc">Simulation snapshots of robust locomotion on the Doggo platform.</p>
+
+      <div class="media-grid media-grid--wide">
+        <div class="media-card">
+          <p class="media-title">Trajectory Follow Snapshot</p>
+          <video controls loop muted playsinline preload="metadata">
+            <source src="assets/Doggo/doggo-follow.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="media-card">
+          <p class="media-title">Push Recovery Snapshot</p>
+          <div class="media-placeholder">
+            <span>Coming soon</span>
+            <code>assets/Doggo/push_recovery.mp4</code>
+          </div>
+        </div>
+        <div class="media-card">
+          <p class="media-title">Disturbance Snapshot</p>
+          <div class="media-placeholder">
+            <span>Coming soon</span>
+            <code>assets/Doggo/disturbance.mp4</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results-humanoid-gifs">
+      <h2>Humanoid Preview</h2>
+      <p class="section-desc">Short GIF previews on Unitree G1 (4 simulation + 4 hardware). Replace placeholders by uploading files to the paths shown below.</p>
+
+      <h3>Simulation</h3>
+      <div class="media-grid media-grid--wide">
+        <div class="media-card">
+          <p class="media-title">Nominal Walk</p>
+          <img src="assets/Humanoid/sim/nominal_walk.gif" alt="Nominal walk — simulation"
+               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/sim/nominal_walk.gif'))">
+        </div>
+        <div class="media-card">
+          <p class="media-title">Push Example 1</p>
+          <img src="assets/Humanoid/sim/push_example1.gif" alt="Push example 1 — simulation"
+               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/sim/push_example1.gif'))">
+        </div>
+        <div class="media-card">
+          <p class="media-title">Push Example 2</p>
+          <img src="assets/Humanoid/sim/push_example2.gif" alt="Push example 2 — simulation"
+               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/sim/push_example2.gif'))">
+        </div>
+        <div class="media-card">
+          <p class="media-title">Gait Recovery</p>
+          <img src="assets/Humanoid/sim/gait_recovery.gif" alt="Gait recovery — simulation"
+               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/sim/gait_recovery.gif'))">
+        </div>
+      </div>
+
+      <h3>Hardware</h3>
+      <div class="media-grid media-grid--wide">
+        <div class="media-card">
+          <p class="media-title">Nominal Walk</p>
+          <img src="assets/Humanoid/hardware/nominal_walk.gif" alt="Nominal walk — hardware"
+               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/hardware/nominal_walk.gif'))">
+        </div>
+        <div class="media-card">
+          <p class="media-title">Push Example 1</p>
+          <img src="assets/Humanoid/hardware/push_example1.gif" alt="Push example 1 — hardware"
+               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/hardware/push_example1.gif'))">
+        </div>
+        <div class="media-card">
+          <p class="media-title">Push Example 2</p>
+          <img src="assets/Humanoid/hardware/push_example2.gif" alt="Push example 2 — hardware"
+               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/hardware/push_example2.gif'))">
+        </div>
+        <div class="media-card">
+          <p class="media-title">Gait Recovery</p>
+          <img src="assets/Humanoid/hardware/gait_recovery.gif" alt="Gait recovery — hardware"
+               loading="lazy" onerror="this.replaceWith(createPlaceholder('assets/Humanoid/hardware/gait_recovery.gif'))">
+        </div>
+      </div>
+    </section>
+
+    <section id="results-humanoid-video">
+      <h2>Humanoid Demo Video</h2>
+      <p class="section-desc">Full-length humanoid experiment reel (YouTube).</p>
+      <div class="video-wrapper" id="video-embed" style="display:none">
+        <iframe
+          id="youtube-iframe"
+          title="Humanoid demo video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-placeholder" id="video-placeholder">
+        Full humanoid demo will be hosted on YouTube. Set <code>youtubeVideoId</code> at the bottom of this page to embed it.
+      </div>
+    </section>
 
     <section id="bibtex">
       <h2>BibTeX</h2>
@@ -123,6 +301,13 @@
   </div>
 
   <script>
+    function createPlaceholder(path) {
+      const el = document.createElement("div");
+      el.className = "media-placeholder";
+      el.innerHTML = "<span>Coming soon</span><code>" + path + "</code>";
+      return el;
+    }
+
     const youtubeVideoId = "";
 
     if (youtubeVideoId) {
