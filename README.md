@@ -18,7 +18,7 @@ This project extends the open-source repository **[AMP_mjlab](https://github.com
 | Added module | —                                      | TCLF co-training, probabilistic stability regularization, certified RoA |
 
 
-**Note:** The upstream repo may include broader locomotion features. **This release focuses on robust velocity-tracking locomotion**, not fall-and-get-up recovery.
+**Note:** The upstream repo may include broader locomotion features. **This release focuses on robust velocity-tracking locomotion**.
 
 Deployment integration from the upstream project remains in [ccrpRepo/wbc_fsm](https://github.com/ccrpRepo/wbc_fsm) (`MJAmp State`).
 
@@ -113,3 +113,4 @@ python scripts/csv_to_npz.py --help
 - [ccrpRepo/AMP_mjlab](https://github.com/ccrpRepo/AMP_mjlab) — base G1 AMP mjlab codebase this work extends
 - [unitreerobotics/unitree_rl_mjlab](https://github.com/unitreerobotics/unitree_rl_mjlab)
 - [Open-X-Humanoid/TienKung-Lab](https://github.com/Open-X-Humanoid/TienKung-Lab) — AMP implementation reference in `rsl_rl`
+
