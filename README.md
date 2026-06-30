@@ -4,17 +4,19 @@
 
 Simulation code for **certifiably robust legged locomotion** on Unitree G1: probabilistic neural Lyapunov functions integrated into an Actor–Critic RL pipeline (AMP + `LyaPPO`).
 
-![Framework overview](docs/assets/framework.png)
+Framework overview
 
 ## Fork & Scope
 
 This project extends the open-source repository **[AMP_mjlab](https://github.com/ccrpRepo/AMP_mjlab)** (mjlab + rsl_rl AMP stack for Unitree G1). We thank the upstream authors for releasing their codebase.
 
-| | Upstream (`ccrpRepo/AMP_mjlab`) | This repo (`robust-NLFRL`) |
-|---|---|---|
-| Focus | AMP-based G1 locomotion infrastructure | **Probabilistic neural Lyapunov + RL** for robust velocity tracking |
-| Main task | `Unitree-G1-AMP-Flat` / `Rough` | **`Unitree-G1-LYA-Flat`** |
-| Added module | — | TCLF co-training, probabilistic stability regularization, certified RoA |
+
+|              | Upstream (`ccrpRepo/AMP_mjlab`)        | This repo (`robust-NLFRL`)                                              |
+| ------------ | -------------------------------------- | ----------------------------------------------------------------------- |
+| Focus        | AMP-based G1 locomotion infrastructure | **Probabilistic neural Lyapunov + RL** for robust velocity tracking     |
+| Main task    | `Unitree-G1-AMP-Flat` / `Rough`        | `**Unitree-G1-LYA-Flat`**                                               |
+| Added module | —                                      | TCLF co-training, probabilistic stability regularization, certified RoA |
+
 
 **Note:** The upstream repo may include broader locomotion features. **This release focuses on robust velocity-tracking locomotion**, not fall-and-get-up recovery.
 
@@ -65,11 +67,13 @@ cp mjlab_patch/mjlab/managers/observation_manager.py \
 python scripts/list_envs.py --keyword LYA
 ```
 
-| Task ID | Description |
-|---|---|
+
+| Task ID               | Description                                                   |
+| --------------------- | ------------------------------------------------------------- |
 | `Unitree-G1-LYA-Flat` | **Ours** — AMP + probabilistic neural Lyapunov (flat terrain) |
-| `Unitree-G1-AMP-Flat` | AMP baseline (flat) |
-| `Unitree-G1-Flat` | PPO velocity tracking baseline (no AMP) |
+| `Unitree-G1-AMP-Flat` | AMP baseline (flat)                                           |
+| `Unitree-G1-Flat`     | PPO velocity tracking baseline (no AMP)                       |
+
 
 ## Training
 

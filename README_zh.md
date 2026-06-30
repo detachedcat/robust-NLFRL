@@ -8,7 +8,7 @@
 
 ## 代码来源与范围说明
 
-本项目在开源仓库 **[ccrpRepo/AMP_mjlab](https://github.com/ccrpRepo/AMP_mjlab)**（基于 mjlab + rsl_rl 的 G1 AMP 运动控制栈）之上开发，感谢上游作者的开源工作。
+本项目在开源仓库 **[AMP_mjlab](https://github.com/ccrpRepo/AMP_mjlab)**（基于 mjlab + rsl_rl 的 G1 AMP 运动控制栈）之上开发，感谢上游作者的开源工作。
 
 | | 上游 (`ccrpRepo/AMP_mjlab`) | 本仓库 (`robust-NLFRL`) |
 |---|---|---|
@@ -16,7 +16,7 @@
 | 主要任务 | `Unitree-G1-AMP-Flat` / `Rough` | **`Unitree-G1-LYA-Flat`** |
 | 新增模块 | — | TCLF 联合训练、概率稳定性正则、认证 RoA |
 
-**说明：** 上游仓库可能包含更宽泛的运动能力探索。**本仓库聚焦可认证鲁棒 locomotion（速度跟踪）**，不以跌倒起身（fall-and-get-up）为主要目标。
+**说明：** 上游仓库可能包含更宽泛的运动能力探索。**本仓库聚焦可认证鲁棒 locomotion（速度跟踪）**。
 
 上游部署集成代码仍在 [ccrpRepo/wbc_fsm](https://github.com/ccrpRepo/wbc_fsm) 的 `MJAmp State` 中。
 
